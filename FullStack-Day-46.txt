@@ -1,0 +1,38 @@
+Day 46:
+==========
+
+Object Serialization
+==========================
+Object Serialization is the process of converting a Python object into a byte stream so it can be stored in a file, sent over a network, or saved in a database.
+In Python, serialization is commonly done using the pickle module.
+
+Example:
+import pickle
+
+data = {"id": 101, "name": "Nikhil"}
+
+with open("obj.dat", "wb") as f:
+    pickle.dump(data, f)
+
+Key Points:
+Converts objects into bytes
+File opened in binary write (wb) mode
+Supports complex objects
+
+
+Object Deserialization
+===========================
+Object Deserialization is the process of reconstructing the original Python object from the byte stream.
+
+Example:
+import pickle
+
+with open("obj.dat", "rb") as f:
+    obj = pickle.load(f)
+
+print(obj)
+
+Key Points:
+File opened in binary read (rb) mode
+Restores original object state
+⚠️ Do not deserialize untrusted data
